@@ -25,8 +25,13 @@ main {
   background-image: url('./images/cold-bg.jpg');
 }
 
+
 .warm {
   background-image: url('./images/warm-bg.jpg');
+}
+
+.hot{
+  background-image: url('./images/hot.jpg');
 }
 
 .search-box {
