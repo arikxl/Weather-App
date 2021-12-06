@@ -22,24 +22,24 @@ main {
   background-position: bottom;
   background-size: cover;
   transition: 0.4s ease-in-out;
-  background-image: url('./images/nice.jpg');
+  background-image: url("https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/nice_wyhcst.jpg");
 }
 
 
 .hot{
-  background-image: url(https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/hot_lrdeqe.jpg);
+  background-image: url("https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/hot_lrdeqe.jpg");
 }
 .nice {
-  background-image: url(https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/nice_wyhcst.jpg);
+  background-image: url("https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/nice_wyhcst.jpg");
 }
 .chill {
-  background-image: url(https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/chill_r92oxk.jpg);
+  background-image: url("https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/chill_r92oxk.jpg");
 }
 .cold {
-  background-image: url(https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/cold-bg_x1qzba.jpg);
+  background-image: url("https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/cold-bg_x1qzba.jpg");
 }
 .snow {
-  background-image: url(https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/snow_vpa96q.jpg);
+  background-image: url("https://res.cloudinary.com/arikxl/image/upload/v1638825774/weather/snow_vpa96q.jpg");
 }
 
 .search-box {
