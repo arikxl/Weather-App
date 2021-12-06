@@ -26,16 +26,27 @@ const Weather = () => {
 
     // ugly code!!! didnt succeed to make switch case
     const setClass = (temp) => {
-        if (temp > 35) {
-            return setBgImg('hot ');
-        } else if (temp > 20) {
-            return setBgImg('nice ');
+        if (temp < 0) {
+            return setBgImg('snow ');
         } else if (temp > 10) {
-            return setBgImg('chill ');
-        } else if (temp > 0) {
             return setBgImg('cold ');
-        } else return setBgImg('snow ');
+        } else if (temp > 20) {
+            return setBgImg('chill ');
+        } else if (temp > 35) {
+            return setBgImg('nice ');
+        } else return setBgImg('hot ');
     };
+    // const setClass = (temp) => {
+    //     if (temp > 35) {
+    //         return setBgImg('hot ');
+    //     } else if (temp > 20) {
+    //         return setBgImg('nice ');
+    //     } else if (temp > 10) {
+    //         return setBgImg('chill ');
+    //     } else if (temp > 0) {
+    //         return setBgImg('cold ');
+    //     } else return setBgImg('snow ');
+    // };
 
     return (
         <div className={`${bgImg} main-container`}>
