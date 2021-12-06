@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { API } from '../service/service'
 
 const Weather = () => {
-
+    console.log(process.env)
     const [query, setQuery] = useState('');
     const [weather, setWeather] = useState({});
     const [bgImg, setBgImg] = useState('');
@@ -14,35 +14,27 @@ const Weather = () => {
                 .then(response => response.json())
                 .then(result => {
                     setWeather(result)
-                    console.log(setClass(result.main.temp))
+                    setClass(result.main.temp)
                     setQuery('')
+                })
+                .catch(err => { 
+                    console.error(err)
+                    alert('Try a different place')
                 });
         };
     };
 
+    // ugly code!!! didnt succeed to make switch case
     const setClass = (temp) => {
-        if (temp > 16) {
-            setBgImg('warm')
-        } else {
-            setBgImg('hot')
-        }
-
-        // switch (temp) {
-        //     case temp > 16: 
-        //         return 'warm';
-        //     case temp < 16:
-        //         return 'cold';
-        //     default:
-        //         return temp;
-        // }
-    }
-
-
+        if (temp > 35) return setBgImg('hot');
+        if (temp > 20) return setBgImg('nice');
+        if (temp > 10) return setBgImg('chill');
+        if (temp > 0) return setBgImg('cold');
+        if (temp < 0) return setBgImg('snow');
+    };
 
     return (
         <div className={`${bgImg} main-container`}>
-            {/* <div className={(weather.main && weather.main.temp > 16)
-            ? 'main-container hot' : 'main-container'}> */}
             <main>
                 <div className="search-box">
                     <input type="text"
@@ -69,6 +61,6 @@ const Weather = () => {
             </main>
         </div>
     )
-}
+};
 
-export default Weather
+export default Weather;

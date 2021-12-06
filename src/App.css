@@ -22,16 +22,25 @@ main {
   background-position: bottom;
   background-size: cover;
   transition: 0.4s ease-in-out;
-  background-image: url('./images/cold-bg.jpg');
+  background-image: url('./images/nice.jpg');
 }
 
-
-.warm {
-  background-image: url('./images/warm-bg.jpg');
-}
 
 .hot{
   background-image: url('./images/hot.jpg');
+}
+.nice {
+  background-image: url('./images/nice.jpg');
+}
+
+.chill{
+  background-image: url('./images/chill.jpg');
+}
+.cold{
+  background-image: url('./images/cold-bg.jpg');
+}
+.snow{
+  background-image: url('./images/snow.jpg');
 }
 
 .search-box {
