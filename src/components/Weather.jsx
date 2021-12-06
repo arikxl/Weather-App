@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { API } from '../service/service'
 
 const Weather = () => {
-    console.log(process.env)
     const [query, setQuery] = useState('');
     const [weather, setWeather] = useState({});
     const [bgImg, setBgImg] = useState('');
@@ -13,26 +12,32 @@ const Weather = () => {
             fetch(`${API.base}weather?q=${query}&units=metric&APPID=${API.key}`)
                 .then(response => response.json())
                 .then(result => {
-                    setWeather(result)
-                    setClass(result.main.temp)
-                    setQuery('')
+                    setWeather(result);
+                    setClass(result.main.temp);
+                    setQuery('');
                 })
                 .catch(err => {
-                    console.error(err)
                     alert('Try a different place')
+                    console.error(err)
                 });
         };
     };
+
+    useEffect(() => {
+        if (weather.main) {
+            setClass(weather.main.temp);
+        }
+    }, [query])
 
     // ugly code!!! didnt succeed to make switch case
     const setClass = (temp) => {
         if (temp < 0) {
             return setBgImg('snow ');
-        } else if (temp > 10) {
+        } else if (temp > -1 && temp < 11) {
             return setBgImg('cold ');
-        } else if (temp > 20) {
+        } else if (temp > 10 && temp < 21) {
             return setBgImg('chill ');
-        } else if (temp > 35) {
+        } else if (temp > 20 && temp < 35) {
             return setBgImg('nice ');
         } else return setBgImg('hot ');
     };
